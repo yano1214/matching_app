@@ -6,7 +6,7 @@
         <header class="header">
             <p class='header_logo'>
                 <a href="{{ route('home') }}">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-home fa-2x"></i>
                 </a>
             </p>
         </header>
@@ -15,6 +15,8 @@
                 <img src="/storage/images/{{$user -> img_name}}">
             </div>
             <div class='userInfo_name'>{{ $user -> name }}</div>
+<div class="profile_text">
+<h3>プロフィール</h3></div>
             <div class='userInfo_selfIntroduction'>{{ $user -> self_introduction }}</div>
         </div>
 
@@ -25,7 +27,10 @@
             </div>
             <div class='userAction_logout userAction_common'>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();"><i class="fas fa-cog fa-2x"></i></a>
+          document.getElementById('logout-form').submit();">
+<!-- <i class="fas fa-cog fa-2x"></i> -->
+<i class="fa-solid fa-right-from-bracket fa-2x"></i>
+</a>
                 <span>ログアウト</span>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

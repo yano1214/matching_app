@@ -43,7 +43,7 @@ class RegisterController extends Controller
         $this->middleware('guest:admin');
     }
 
-protected function guard()                  //追記
+    protected function guard()                  //追記
     {                                           //追記
         return Auth::guard('admin');            //追記
     }
@@ -60,6 +60,8 @@ protected function guard()                  //追記
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'img_name' => ['file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5000'], //この行を追加します
+            'self_introduction' => ['string', 'max:255'], //この行を追加します
 
         ]);
     }

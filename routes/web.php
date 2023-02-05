@@ -30,8 +30,11 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 
     Route::group(['prefix' => 'users', 'middleware' => 'auth'], function () {
     Route::get('/show/{id}', [UserController::class, 'show']);
+
     Route::get('/edit/{id}', [UserController::class, 'edit']);
+
     Route::get('/update/{id}', [UserController::class, 'update']);
+Route::post('/update/{id}', [UserController::class, 'update']);
 });
 
 Route::get('/', function () {
@@ -84,6 +87,8 @@ Route::post('delete/{id}', [App\Http\Controllers\admin\HomeController::class, 'd
 
     // Route::redirect('/delete{id}', 'admin/home');
     // Route::get('admin/home', [App\Http\Controllers\admin\HomeController::class, 'delete'])->name('delete');
+// Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     // Route::get('edit/{id}', 'EditController@index')->name('edit');
     // Route::post('edit/{id}', 'EditController@update');

@@ -81,7 +81,7 @@ class RegisterController extends Controller
 
         $image = Image::make($data_url);
 
-        $image->resize(400,400)->save(storage_path() . '/app/public/images/' . $fileNameToStore );
+        $image->resize(500,500)->save(storage_path() . '/app/public/images/' . $fileNameToStore );
 
         return User::create([
             'name' => $data['name'],
